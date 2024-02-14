@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Split Interface</title>
+<link rel="stylesheet" type="text/css" href="Css.css">
+</head>
+<body>
+
+<div id="main-interface">
+    <button id="button1" onclick="toggleSplitInterface()">Menu</button>
+    <div id="split-interface">
+        <button id="main" class="split-button" style="top: 20%; left: 50px;" data-target="index.html">Main</button>
+        <button id="1" class="split-button" style="top: 40%; left: 50px;" onclick="toggleButtonText('1')">Sound 1</button>
+        <button id="2" class="split-button" style="top: 60%; left: 50px;" onclick="toggleButtonText('2')">Sound 2</button>
+        <button id="3" class="split-button" style="top: 80%; left: 50px;" onclick="toggleButtonText('3')">Sound 3</button>   
+    </div>
+    <audio controls id="audioPlayer" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);"></audio>
+    <button id="m1" class="music-button" data-music="Insane.mp4" style="top: 50px; right: 20px;">Alastor</button>
+    <button id="m2" class="music-button" data-music="laser.flac" style="top: 50px; right: 80px;">Laser</button>
+</div>
+
+<script src="web.js"></script>
+
+</body>
+</html>

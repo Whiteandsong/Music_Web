@@ -1,7 +1,12 @@
 ﻿var originalTexts = {
     "button2": "White Noise",
     "button3": "Natural Sound",
-    "button4": "Cosmic Sound"
+    "button4": "Cosmic Sound",
+    "main": "Main",
+    "1": "Sound 1",
+    "2": "Sound 2",
+    "3": "Sound 3"
+
 };
 
 function toggleSplitInterface() {
@@ -32,3 +37,30 @@ function toggleButtonText(buttonId) {
         button.innerHTML = originalTexts[buttonId];
     }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    var buttons = document.querySelectorAll('.split-button');
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var targetPage = button.getAttribute('data-target');
+            if (targetPage) {
+                window.location.href = targetPage;
+            }
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    var buttons = document.querySelectorAll('.music-button');
+    var audioPlayer = document.getElementById('audioPlayer');
+    
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var musicFile = button.getAttribute('data-music');
+            if (musicFile) {
+                audioPlayer.src = musicFile;
+                audioPlayer.play();
+            }
+        });
+    });
+});

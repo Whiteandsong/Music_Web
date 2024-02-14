@@ -2,6 +2,7 @@
     "button2": "White Noise",
     "button3": "Natural Sound",
     "button4": "Cosmic Sound",
+    "button5": "Sound",
     "main": "Main",
     "1": "Sound 1",
     "2": "Sound 2",

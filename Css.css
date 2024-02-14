@@ -21,9 +21,12 @@ body {
 #button1 {
     position: absolute;
     top: 10px;
-    left: 5px;
+    left: 13px;
     z-index: 1;
-    padding: 5px 5px;
+    padding: 0;
+    background: none;
+    display: block;
+    border: none;
 }
 .split-button {
     display: none;

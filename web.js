@@ -22,7 +22,7 @@ function toggleSplitInterface() {
         });
     } else {
         splitInterface.style.left = "-20%";
-        button1.style.left = "5px";
+        button1.style.left = "13px";
         buttons.forEach(function(button) {
             button.style.display = "none";
         });

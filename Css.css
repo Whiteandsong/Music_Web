@@ -10,7 +10,7 @@ body {
     position: relative;
     margin: 0;
     padding: 0;
-    background-image: url('main\ interface.png'); 
+    background-image: url('day-main\ interface.png'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -24,10 +24,22 @@ body {
     left: -20%;
     transition: left 0.5s ease;
 }
+#modeIconButton {
+    position: fixed;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f0f0f000;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    width: 10%; 
+    height: 10%;
+}
 .button1 {
-    position: absolute;
-    top: 10px;
-    left: 13px;
+    position: fixed;
+    top: 1%;
+    left: 0.5%;
     z-index: 1;
     padding: 0;
     width: 4%;
@@ -36,6 +48,9 @@ body {
     background-color: #f0f0f000;
     display: block;
     border: none;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .split-button {
     display: none;

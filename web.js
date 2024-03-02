@@ -18,13 +18,13 @@ function toggleSplitInterface() {
     if (splitInterface.style.left === "-20%") {
         splitInterface.style.left = "0";
         button1.style.transition = "left 0.5s ease";
-        button1.style.left = "230px"
+        button1.style.left = "20%"
         buttons.forEach(function(button) {
             button.style.display = "block";
         });
     } else {
         splitInterface.style.left = "-20%";
-        button1.style.left = "13px";
+        button1.style.left = "0.5%";
         buttons.forEach(function(button) {
             button.style.display = "none";
         });
@@ -40,15 +40,6 @@ function toggleButtonText(buttonId) {
     }
 }
 
-// Change Mode
-function toggleIconImage() {
-    var iconImage = document.getElementById('iconImage');
-    if (iconImage.src === "icon1.png") { 
-        iconImage.src = ".png";
-    } else {
-        iconImage.src = "icon1.png";
-    }
-}
 
 document.addEventListener("DOMContentLoaded", function() {
     var buttons = document.querySelectorAll('.split-button');
@@ -61,6 +52,17 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+// Icon change
+function toggleIconImage() {
+    var toggleButton = document.getElementById('modeIconButton');
+    if (toggleButton.style.backgroundImage === 'url("dark.png")') { 
+        toggleButton.style.backgroundImage = 'url("light.png")';
+    } else {
+        toggleButton.style.backgroundImage = 'url("dark.png")';
+    }
+}
+
 
 document.addEventListener("DOMContentLoaded", function() {
     var buttons = document.querySelectorAll('.music-button');

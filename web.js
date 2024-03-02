@@ -56,10 +56,10 @@ document.addEventListener("DOMContentLoaded", function() {
 // Icon change
 function toggleIconImage() {
     var toggleButton = document.getElementById('modeIconButton');
-    if (toggleButton.style.backgroundImage === 'url("dark.png")') { 
-        toggleButton.style.backgroundImage = 'url("light.png")';
+    if (toggleButton.style.backgroundImage === 'url("icons/dark.png")') { 
+        toggleButton.style.backgroundImage = 'url("icons/light.png")';
     } else {
-        toggleButton.style.backgroundImage = 'url("dark.png")';
+        toggleButton.style.backgroundImage = 'url("icons/dark.png")';
     }
 }
 

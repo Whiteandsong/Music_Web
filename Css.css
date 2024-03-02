@@ -8,12 +8,6 @@ body {
     height: 100vh;
     background-color: #f0f0f0;
     position: relative;
-    margin: 0;
-    padding: 0;
-    background-image: url('main\ interface.png'); 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
 }
 #split-interface {
     width: 25%;
@@ -24,13 +18,16 @@ body {
     left: -20%;
     transition: left 0.5s ease;
 }
-#button1 {
+.button1 {
     position: absolute;
     top: 10px;
     left: 13px;
     z-index: 1;
     padding: 0;
-    background: none;
+    width: 4%;
+    height: 7%;
+    background-image: url('music-library.png');
+    background-color: #f0f0f000;
     display: block;
     border: none;
 }

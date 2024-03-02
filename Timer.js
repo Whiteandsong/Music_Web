@@ -8,7 +8,7 @@ var lastTime = 0;
 function playStopTimer() {
     var button = document.getElementById("playStopButton");
     if (!timerRunning) {
-        // Start the timer
+        // Start the timer, Return ms from start to now
         startTime = new Date().getTime();
         timerInterval = setInterval(updateTimer, 1000);
         button.textContent = "Stop";

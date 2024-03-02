@@ -40,6 +40,16 @@ function toggleButtonText(buttonId) {
     }
 }
 
+// Change Mode
+function toggleIconImage() {
+    var iconImage = document.getElementById('iconImage');
+    if (iconImage.src === "icon1.png") { 
+        iconImage.src = ".png";
+    } else {
+        iconImage.src = "icon1.png";
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     var buttons = document.querySelectorAll('.split-button');
     buttons.forEach(function(button) {

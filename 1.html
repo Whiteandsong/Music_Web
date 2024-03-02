@@ -11,11 +11,11 @@
 <body>
 
 <div id="main-interface">
-    <button id="button1" onclick="toggleSplitInterface()"><img src="menu.png" style="width: 30px; height:30px;"></button>
+    <button id="button1" class = "button1" onclick="toggleSplitInterface()"></button>
     <div id="split-interface">
         <button id="main" class="split-button" style="top: 20%; left: 50px;" data-target="index.html">Main</button>
         <button id="1" class="split-button" style="top: 40%; left: 50px;" onclick="toggleButtonText('1')">Sound 1</button>
-        <button id="2" class="split-button" style="top: 60%; left: 50px;" onclick="toggleButtonText('2')">Sound 2</button>
+        <button id="2" class="split-button" style="top: 60%; left: 50px;" onclick="toggleButtonText('2')">Ssound 2</button>
         <button id="3" class="split-button" style="top: 80%; left: 50px;" onclick="toggleButtonText('3')">Sound 3</button>   
     </div>
     <audio controls id="audioPlayer" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);"></audio>

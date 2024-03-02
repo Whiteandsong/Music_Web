@@ -10,7 +10,7 @@ body {
     position: relative;
     margin: 0;
     padding: 0;
-    background-image: url('...background\ images/main\ interface.day'); 
+    background-image: url('background-images/main\ interface.day.png'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -44,7 +44,7 @@ body {
     padding: 0;
     width: 4%;
     height: 7%;
-    background-image: url('music-library.png');
+    background-image: url('icons/music-library.png');
     background-color: #f0f0f000;
     display: block;
     border: none;

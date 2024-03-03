@@ -70,12 +70,16 @@ function toggleIconImage() {
 
     if (toggleButton.style.backgroundImage === 'url("icons/dark.png")') { 
         toggleButton.style.backgroundImage = 'url("icons/light.png")';
-        timerDisplay.style.color = 'black'
-        congratsMessage.style.color = 'black'
+        if (timerDisplay){
+            timerDisplay.style.color = 'black'
+            congratsMessage.style.color = 'black'
+        }
     } else {
         toggleButton.style.backgroundImage = 'url("icons/dark.png")';
-        timerDisplay.style.color = 'white'
-        congratsMessage.style.color = 'white'
+        if (timerDisplay){
+            timerDisplay.style.color = 'white'
+            congratsMessage.style.color = 'white'
+        }
     }
 
     toggleBackgroundImage()

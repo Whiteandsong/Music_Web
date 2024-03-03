@@ -33,9 +33,20 @@
     
     <div id="timerDisplay">0:00:00</div>
     <div id="congratsMessage">Congratulations! You've learned</div> 
+
+    <div id="Task">
+        <button id="openInputBtn" style="border: none; background-color: rgba(255, 255, 255, 0)">Enter Your Task</button>
+        <div id="inputContainer">
+            <input type="text" id="messageInput" placeholder="">
+            <button id="submitBtn" style="border: none; background-color: rgba(255, 255, 255, 0)">Submit</button>
+        </div>
+        <div id="messageContainer"></div>
+        <button id="clearBtn" style="border: none; background-color: rgba(255, 255, 255, 0)">Clear Tasks</button>
+    </div>
 </div>
 <input type="hidden" id="currentInterfaceValue" value="main-interface3">
 
 <script src="Timer.js"></script>
+<script src="UserInput.js"></script>
 </body>
 </html>

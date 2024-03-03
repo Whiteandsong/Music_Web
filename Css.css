@@ -74,15 +74,15 @@ body {
 }
 #modeIconButton {
     position: fixed;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 15%;
+    left: 80%;
+    transform: translateX(-95%);
     background-color: #f0f0f000;
     background-size: contain;
     background-repeat: no-repeat;
     border: none;
-    width: 10%; 
-    height: 10%;
+    width: 7%; 
+    height: 7%;
 }
 #playStopButton {
     position: fixed;

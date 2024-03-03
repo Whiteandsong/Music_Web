@@ -65,10 +65,17 @@ document.addEventListener("DOMContentLoaded", function() {
 // Icon change
 function toggleIconImage() {
     var toggleButton = document.getElementById('modeIconButton');
+    var timerDisplay = document.getElementById('timerDisplay')
+    var congratsMessage = document.getElementById("congratsMessage");
+
     if (toggleButton.style.backgroundImage === 'url("icons/dark.png")') { 
         toggleButton.style.backgroundImage = 'url("icons/light.png")';
+        timerDisplay.style.color = 'black'
+        congratsMessage.style.color = 'black'
     } else {
         toggleButton.style.backgroundImage = 'url("icons/dark.png")';
+        timerDisplay.style.color = 'white'
+        congratsMessage.style.color = 'white'
     }
 
     toggleBackgroundImage()

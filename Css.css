@@ -4,7 +4,7 @@ body {
     font-family: cursive;
 }
 h1 {
-    font-size: 19px; 
+    font-size: 18px; 
     line-height: 1.5; 
     position: absolute;
     text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
@@ -186,10 +186,30 @@ h1 {
     position: relative;
     margin: 0;
     padding: 0;
-    top: 10%;
-    left: 20%;
+    top: 16%;
+    left: 15%;
+    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
+
 }
 #Task .task {
     border: none; /* 去除按钮的边框 */
     background-color: #00000000;
+    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
+
+    
+}
+#Task .task-contanier {
+    border: none; /* 去除按钮的边框 */
+    background-color: #00000000;
+    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
+    font-family: cursive;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#inputContainer {
+    display: none ;
+    align-items: center;
 }

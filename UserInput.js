@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     openInputBtn.addEventListener("click", function() {
         inputContainer.style.display = "block";
+        inputContainer.style.display = "inline-flex";
     });
 
     submitBtn.addEventListener("click", function() {

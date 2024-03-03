@@ -10,12 +10,14 @@
 
 <div id="main-interface">
     <button id= "button1" class="button1" onclick="toggleSplitInterface()"></button>
+    <h1>You can list your To-Do here:</h1>
+
     <button id="modeIconButton" style="position: fixed; background-image: url('icons/light.png')" onclick="toggleIconImage()"></button>
     <button id="statusIconButton" style = "background-image: url('icons/Reading.png')" onclick="statustoggleImage()"></button>
 
     <div id="split-interface">
         <button id="button2" class="split-button" style="top: 20%; left: 50px;" data-target="0.html">Piano</button>
-        <button id="button3" class="split-button" style="top: 40%; left: 50px;" data-target="1.html">Nature</button>
+        <button id="button3" class="split-button" style="top: 40%; left: 50px;" data-target="1.html">Light Song</button>
         <button id="button4" class="split-button" style="top: 60%; left: 50px;" data-target="2.html">Popular</button>
         <button id="button5" class="split-button" style="top: 80%; left: 50px;" data-target="3.html">White noise</button>   
 
@@ -26,15 +28,16 @@
     <div id="timerDisplay">0:00:00</div>
     <div id="congratsMessage">Congratulations! You've learned</div> 
 
-    <div id="Task">
-        <button id="openInputBtn" style="border: none; background-color: rgba(255, 255, 255, 0)">Enter Your Task</button>
-        <div id="inputContainer">
-            <input type="text" id="messageInput" placeholder="">
-            <button id="submitBtn" style="border: none; background-color: rgba(255, 255, 255, 0)">Submit</button>
-        </div>
-        <div id="messageContainer"></div>
-        <button id="clearBtn" style="border: none; background-color: rgba(255, 255, 255, 0)">Clear Tasks</button>
+<div id="Task">
+    <button id="openInputBtn" class="task-contanier">Enter Your Task</button>
+    <div id="inputContainer">
+        <input type="text" id="messageInput" placeholder="">
+        <button id="submitBtn" class="task-contanier">Submit</button>
     </div>
+    <div id="messageContainer"></div>
+    <button id="clearBtn" class="task-contanier">Clear Tasks</button>
+</div>
+
 </div>
 
 <input type="hidden" id="currentInterfaceValue" value="main-interface">

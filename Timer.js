@@ -25,8 +25,8 @@ window.onload = function() {
 function playStopTimer() {
     if (!timerRunning) {
         startTimer();
-        timerDisplay.style.top = "40%";
-        timerDisplay.style.left = "50%";
+        timerDisplay.style.bottom = "20%";
+        timerDisplay.style.left = "52%";
         timerDisplay.style.display = "block";
         congratsMessage.style.display = "none";
         icon.style.backgroundImage = 'url("icons/clock.dark.png")';
@@ -34,8 +34,8 @@ function playStopTimer() {
         localStorage.setItem('timerRunning', 'true');
     } else {
         clearInterval(timerInterval);
-        timerDisplay.style.top = "50%";
-        timerDisplay.style.left = "68%";
+        timerDisplay.style.buttom = "20%";
+        timerDisplay.style.left = "59%";
         congratsMessage.style.display = "block";
         icon.style.backgroundImage = 'url("icons/clock.day.png")';
         timerRunning = false;

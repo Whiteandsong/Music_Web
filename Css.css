@@ -93,8 +93,8 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     border: none;
-    width: 8%; 
-    height: 8%;
+    width: 6%; 
+    height: 6%;
 }
 #playStopButton {
     position: fixed;
@@ -110,23 +110,23 @@ body {
 #timerDisplay {
     display: none; 
     position: fixed;
-    top: 40%;
-    left: 50%;
+    bottom: 20%;
+    left: 52%;
     color:#000;
     transition: top 0.5s ease;
     transition: left 0.5s ease;
     transform: translate(-50%, -50%);
-    font-size: 3vw;
+    font-size: 2vw;
     font-family: fantasy;
 }
 #congratsMessage {
     display: none;
     position: fixed;
     color:#000;
-    top: 50%;
+    bottom: 20%;
     left: 40%;
     transform: translate(-50%, -50%);
-    font-size: 3vw;
+    font-size: 2vw;
     font-family: fantasy;
 }
 .button1 {

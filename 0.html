@@ -24,25 +24,29 @@
     <audio controls id="audioPlayer" loop style="position: fixed; top: 50%; left: 80%; transform: translate(-50%, -50%);"></audio>
     <button id="m1" class="music-button" data-music="music/Piano/Clair de lune. CD 82, L. 75_ III.mp3" style="top: 10%; right: 10%;">Clair de lune. CD 82, L. 75_ III</button>
     <button id="m2" class="music-button" data-music="music/Piano/Last Snows of Spring.mp3" style="top: 15%; right: 10%;">Last Snows of Spring</button>
-    <button id="m2" class="music-button" data-music="music/Piano/Nocturne in E flat major Op.9 No.2.mp3" style="top: 20%; right: 10%;">Nocturne in E flat major</button>
-    <button id="m2" class="music-button" data-music="music/Piano/Reverie L.68.mp3" style="top: 25%; right: 10%;">Reverie</button>
-    <button id="m2" class="music-button" data-music="music/Piano/Sixteen Waltzes, Op. 39_ No. 15.mp3" style="top: 30%; right: 10%;">Sixteen Waltzes</button>
-    <button id="m2" class="music-button" data-music="music/Piano/Spring Song, Op. 62 No. 6.mp3" style="top: 35%; right: 10%;">Spring Song</button>
+    <button id="m3" class="music-button" data-music="music/Piano/Nocturne in E flat major Op.9 No.2.mp3" style="top: 20%; right: 10%;">Nocturne in E flat major</button>
+    <button id="m4" class="music-button" data-music="music/Piano/Reverie L.68.mp3" style="top: 25%; right: 10%;">Reverie</button>
+    <button id="m5" class="music-button" data-music="music/Piano/Sixteen Waltzes, Op. 39_ No. 15.mp3" style="top: 30%; right: 10%;">Sixteen Waltzes</button>
+    <button id="m6" class="music-button" data-music="music/Piano/Spring Song, Op. 62 No. 6.mp3" style="top: 35%; right: 10%;">Spring Song</button>
 
     <button id="playStopButton" onclick="playStopTimer()" style="position: fixed; bottom: 10%; left: 50%; width: 6%; height: 6%; background-image: url('icons/clock.day.png')"></button>
     
     <div id="timerDisplay">0:00:00</div>
     <div id="congratsMessage">Congratulations! You've learned</div> 
 
-<div id="Task">
-    <button id="openInputBtn" class="task-contanier">Enter Your Task</button>
-    <div id="inputContainer">
-        <input type="text" id="messageInput" placeholder="">
-        <button id="submitBtn" class="task-contanier">Submit</button>
+    <div id="taskContainer">
+        <button onclick="openInput()" style = "border: none; background-color: rgba(240, 248, 255, 0); text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
+        font-family: fantasy">Add Task</button>
+    
+        <div id="inputContainer" style="display: none;">
+            <input type="text" id="taskInput">
+            <button onclick="addTask()" style = "border: none; background-color: rgba(240, 248, 255, 0); text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
+            font-family: fantasy">Add</button>
+        </div>
+        <ul id="taskList"></ul>
+        <button onclick="clearTasks()" style = "border: none; background-color: rgba(240, 248, 255, 0); text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732); font-family: fantasy
+        ">Clear Tasks</button>
     </div>
-    <div id="messageContainer"></div>
-    <button id="clearBtn" class="task-contanier">Clear Tasks</button>
-</div>
 
 </div>
 <input type="hidden" id="currentInterfaceValue" value="main-interface1">

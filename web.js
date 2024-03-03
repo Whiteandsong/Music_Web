@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function() {
     buttons.forEach(function(button) {
         button.addEventListener('click', function() {
             var musicFile = button.getAttribute('data-music');
-            alert('Button clicked: ' + button.id);
+            // alert('Button clicked: ' + button.id);
             if (musicFile) {
                 audioPlayer.src = musicFile;
                 audioPlayer.play();

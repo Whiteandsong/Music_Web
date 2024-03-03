@@ -29,22 +29,24 @@
     <button id="m4" class="music-button" data-music="music/Light song/Streets-ofParis.mp3" style="top: 20%; right: 10%;">Streets of Paris</button>
     <button id="m5" class="music-button" data-music="music/Light song/Summer.mp3" style="top: 25%; right: 10%;">Summer</button>
     <button id="m6" class="music-button" data-music="music/Light song/Valleys.mp3" style="top: 30%; right: 10%;">Valleys</button>
-    <button id="m7" class="music-button" data-music="music/Light song/Lover-letter.mp3" style="top: 40%; right: 10%;">Lover letter</button>
-
     <button id="playStopButton" onclick="playStopTimer()" style="position: fixed; bottom: 10%; left: 50%; width: 6%; height: 6%; background-image: url('icons/clock.day.png')"></button>
     
     <div id="timerDisplay">0:00:00</div>
     <div id="congratsMessage">Congratulations! You've learned</div> 
 
-<div id="Task">
-    <button id="openInputBtn" class="task-contanier">Enter Your Task</button>
-    <div id="inputContainer">
-        <input type="text" id="messageInput" placeholder="">
-        <button id="submitBtn" class="task-contanier">Submit</button>
+    <div id="taskContainer">
+        <button onclick="openInput()" style = "border: none; background-color: rgba(240, 248, 255, 0); text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
+        font-family: fantasy">Add Task</button>
+    
+        <div id="inputContainer" style="display: none;">
+            <input type="text" id="taskInput">
+            <button onclick="addTask()" style = "border: none; background-color: rgba(240, 248, 255, 0); text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
+            font-family: fantasy">Add</button>
+        </div>
+        <ul id="taskList"></ul>
+        <button onclick="clearTasks()" style = "border: none; background-color: rgba(240, 248, 255, 0); text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732); font-family: fantasy
+        ">Clear Tasks</button>
     </div>
-    <div id="messageContainer"></div>
-    <button id="clearBtn" class="task-contanier">Clear Tasks</button>
-</div>
 
 </div>
 <input type="hidden" id="currentInterfaceValue" value="main-interface2">

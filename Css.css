@@ -172,15 +172,14 @@ h1 {
     padding: 10px 20px;
     background-color: #ad202000;
     color: #000;
+    display: block;
     border: none;
     cursor: pointer;
     pointer-events: auto;
     font-size: 15px;
+    z-index: 2;
     text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
     font-family: cursive;
-}
-.completed {
-    text-decoration: line-through;
 }
 #Task {
     background-color: #f0f0f000;
@@ -193,27 +192,20 @@ h1 {
     pointer-events: auto;
     text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
 }
-#Task .task {
-    border: none; /* 去除按钮的边框 */
-    background-color: #00000000;
-    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
-    z-index: 1;
-}
-#Task .task-contanier {
-    border: none; /* 去除按钮的边框 */
-    z-index: 1;
-    padding: 10px;
-    background-color: #00000000;
-    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
-    font-family: cursive;
-    font-size: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-#inputContainer {
-    display: none ;
-    align-items: center;
 
-}
+#taskContainer {
+    position: absolute;
+    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
+    top: 20%;
+    left: 15%;
+  }
+#taskList {
+    list-style-type: none;
+    padding: 0;
+  }
+  .taskItem {
+    margin-bottom: 10px;
+  }
+  .taskItem.completed {
+    text-decoration: line-through;
+  }

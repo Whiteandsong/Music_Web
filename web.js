@@ -19,6 +19,18 @@ var backgroundImages = {
     'main-interface4': ['background-images/sky-day.png', 'background-images/sky-dark.png'],
 };
 
+var currentImageIndex = 0;
+var statusImages= [
+    'icons/Reading.png',
+    'icons/Sleep.png',
+    'icons/Enjoy.png'
+];
+
+var messageArray = [
+    "Congratulations! You've learned",
+    "Congratulations! You've slept",
+    "Congratulations! You've enjoyed"
+];
 // 分屏移动
 function toggleSplitInterface() {
     var splitInterface = document.getElementById('split-interface');
@@ -40,13 +52,21 @@ function toggleSplitInterface() {
     }
 }
 
-function toggleButtonText(buttonId) {
-    var button = document.getElementById(buttonId);
-    if (button.innerHTML === originalTexts[buttonId]) { 
-        button.innerHTML = "Play";
-    } else {
-        button.innerHTML = originalTexts[buttonId];
-    }
+//change status
+function statustoggleImage() {
+    var toggleButton = document.getElementById('statusIconButton');
+    
+    toggleButton.style.backgroundImage = 'url("' + statusImages[currentImageIndex] + '")';
+
+    currentImageIndex = (currentImageIndex + 1) % statusImages.length;
+    
+    toggleButtonText(currentImageIndex)
+}
+
+//text change
+function toggleButtonText(currentImageIndex) {
+    var button = document.getElementById(congratsMessage);
+    button.innerHTML == messageArray[currentImageIndex]
 }
 
 

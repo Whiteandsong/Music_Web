@@ -13,7 +13,10 @@
 var currentBackgroundIndex = 0
 var backgroundImages = {
     'main-interface': ['background-images/main\ interface.day.png', 'background-images/main\ interface-dark.png'],
-    'main-interface1': ['background-images/tree-day.png', 'background-images/tree-dark.png']
+    'main-interface1': ['background-images/tree.day.png', 'background-images/tree-dark.png'],
+    'main-interface2': ['background-images/day-day.png', 'background-images/day-dark.png'],
+    'main-interface3': ['background-images/city-day.jpg', 'background-images/city-dark.jpg'],
+    'main-interface4': ['background-images/sky-day.png', 'background-images/sky-dark.png'],
 };
 
 // 分屏移动
@@ -76,6 +79,9 @@ function toggleBackgroundImage() {
     var currentInterface = document.getElementById('currentInterfaceValue').value;
     var mainInterface = document.getElementById('main-interface');
     var mainInterface1 = document.getElementById('main-interface1');
+    var mainInterface2 = document.getElementById('main-interface2');
+    var mainInterface3 = document.getElementById('main-interface3');
+    var mainInterface4 = document.getElementById('main-interface4');
 
     currentBackgroundIndex = (currentBackgroundIndex + 1) % 2
     // 根据当前界面接口修改背景图片
@@ -83,7 +89,16 @@ function toggleBackgroundImage() {
         mainInterface.style.backgroundImage = 'url("' + backgroundImages['main-interface'][currentBackgroundIndex] + '")';
     } 
     else if (currentInterface === 'main-interface1') {
-        mainInterface.style.backgroundImage = 'url("' + backgroundImages['main-interface1'][currentBackgroundIndex] + '")'; 
+        mainInterface1.style.backgroundImage = 'url("' + backgroundImages['main-interface1'][currentBackgroundIndex] + '")'; 
+    }
+    else if (currentInterface === 'main-interface2') {
+        mainInterface2.style.backgroundImage = 'url("' + backgroundImages['main-interface2'][currentBackgroundIndex] + '")'; 
+    }
+    else if (currentInterface === 'main-interface3') {
+        mainInterface3.style.backgroundImage = 'url("' + backgroundImages['main-interface3'][currentBackgroundIndex] + '")'; 
+    }
+    else if (currentInterface === 'main-interface4') {
+        mainInterface4.style.backgroundImage = 'url("' + backgroundImages['main-interface4'][currentBackgroundIndex] + '")'; 
     }
 }
 

@@ -10,6 +10,12 @@
 
 };
 
+var currentBackgroundIndex = 0
+var backgroundImages = {
+    'main-interface': ['background-images/main\ interface.day.png', 'background-images/main\ interface-dark.png'],
+    'main-interface1': ['background-images/tree-day.png', 'background-images/tree-dark.png']
+};
+
 // 分屏移动
 function toggleSplitInterface() {
     var splitInterface = document.getElementById('split-interface');
@@ -60,6 +66,24 @@ function toggleIconImage() {
         toggleButton.style.backgroundImage = 'url("icons/light.png")';
     } else {
         toggleButton.style.backgroundImage = 'url("icons/dark.png")';
+    }
+
+    toggleBackgroundImage()
+}
+
+// 根据当前界面接口切换背景图片
+function toggleBackgroundImage() {
+    var currentInterface = document.getElementById('currentInterfaceValue').value;
+    var mainInterface = document.getElementById('main-interface');
+    var mainInterface1 = document.getElementById('main-interface1');
+
+    currentBackgroundIndex = (currentBackgroundIndex + 1) % 2
+    // 根据当前界面接口修改背景图片
+    if (currentInterface === 'main-interface') {
+        mainInterface.style.backgroundImage = 'url("' + backgroundImages['main-interface'][currentBackgroundIndex] + '")';
+    } 
+    else if (currentInterface === 'main-interface1') {
+        mainInterface.style.backgroundImage = 'url("' + backgroundImages['main-interface1'][currentBackgroundIndex] + '")'; 
     }
 }
 

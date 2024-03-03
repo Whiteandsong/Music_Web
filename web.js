@@ -22,15 +22,14 @@ var backgroundImages = {
 var currentImageIndex = 0;
 var statusImages= [
     'icons/Reading.png',
-    'icons/Sleep.png',
-    'icons/Enjoy.png'
-];
+    'icons/Enjoy.png',
+    'icons/Sleep.png',];
 
 var messageArray = [
     "Congratulations! You've learned",
-    "Congratulations! You've slept",
-    "Congratulations! You've enjoyed"
-];
+    "Congratulations! You've enjoyed",
+    "Congratulations! You've slept for",];
+
 // 分屏移动
 function toggleSplitInterface() {
     var splitInterface = document.getElementById('split-interface');
@@ -55,18 +54,18 @@ function toggleSplitInterface() {
 //change status
 function statustoggleImage() {
     var toggleButton = document.getElementById('statusIconButton');
-    
-    toggleButton.style.backgroundImage = 'url("' + statusImages[currentImageIndex] + '")';
 
     currentImageIndex = (currentImageIndex + 1) % statusImages.length;
+    
+    toggleButton.style.backgroundImage = 'url("' + statusImages[currentImageIndex] + '")';
     
     toggleButtonText(currentImageIndex)
 }
 
 //text change
 function toggleButtonText(currentImageIndex) {
-    var button = document.getElementById(congratsMessage);
-    button.innerHTML == messageArray[currentImageIndex]
+    var button = document.getElementById('congratsMessage');
+    button.innerHTML = messageArray[currentImageIndex]
 }
 
 

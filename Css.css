@@ -162,5 +162,6 @@ body {
     color: #000;
     border: none;
     cursor: pointer;
+    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
     font-family: cursive;
 }

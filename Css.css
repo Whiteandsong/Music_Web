@@ -74,7 +74,7 @@ body {
 }
 #modeIconButton {
     position: fixed;
-    bottom: 15%;
+    bottom: 10%;
     left: 80%;
     transform: translateX(-95%);
     background-color: #f0f0f000;

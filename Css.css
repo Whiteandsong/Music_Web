@@ -129,6 +129,9 @@ body {
     font-size: 2vw;
     font-family: fantasy;
 }
+#inputContainer {
+    display: none;
+}
 .button1 {
     position: fixed;
     top: 1%;

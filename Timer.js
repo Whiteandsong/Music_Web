@@ -8,35 +8,47 @@ var lastTime = 0;
 function playStopTimer() {
     var button = document.getElementById("playStopButton");
     if (!timerRunning) {
-        // Start the timer, Return ms from start to now
-        startTime = new Date().getTime();
-        timerInterval = setInterval(updateTimer, 1000);
-        button.textContent = "Stop";
+        startTimer();
+        timerDisplay.style.top = "40%";
+        timerDisplay.style.left = "50%";
+        timerDisplay.style.display = "block";
+        congratsMessage.style.display = "none";
+        button.style.backgroundImage = 'url("icons/clock.dark.png")';
         timerRunning = true;
     } else {
-        // Stop the timer
-        clearInterval(timerInterval);
-        button.textContent = "Continue";
-        timerRunning = false;
-        lastTime = elapsedTime; // Save the current elapsed time
-    }
+        timerDisplay.style.top = "50%";
+        timerDisplay.style.left = "60%";
+        congratsMessage.style.display = "block";
+        button.style.backgroundImage = 'url("icons/clock.day.png")';
+        timerRunning = false;}
 }
 
-function restartTimer() {
+function startTimer() {
     clearInterval(timerInterval);
-    document.getElementById("playStopButton").textContent = "Start";
-    timerRunning = false;
-    timerPaused = false;
+    var elapsedTimeInSeconds = elapsedTime / 1000;
+    var formattedTime = formatElapsedTime(elapsedTime);
+    // alert("当前持续时间：" + formattedTime);
+    document.getElementById("timerDisplay").textContent = "00:00:00";
     elapsedTime = 0;
-    lastTime = 0;
-    document.getElementById("timerDisplay").textContent = "0:00:00";
+    startTime = new Date().getTime() - elapsedTime;
+    timerInterval = setInterval(updateTimer, 1000);
 }
+
 
 function updateTimer() {
     var currentTime = new Date().getTime();
     elapsedTime = currentTime - startTime + lastTime;
-    var hours = Math.floor(elapsedTime / (1000 * 60 * 60));
-    var minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
-    document.getElementById("timerDisplay").textContent = hours + ":" + (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+    
+    if (timerRunning) {
+        document.getElementById("timerDisplay").textContent = formatElapsedTime(elapsedTime);
+    }
 }
+
+function formatElapsedTime(time) {
+    var hours = Math.floor(time / (1000 * 60 * 60));
+    var minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((time % (1000 * 60)) / 1000);
+    return hours + ":" + (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+}
+
+

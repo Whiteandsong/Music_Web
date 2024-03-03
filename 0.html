@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Split Interface</title>
-<script src="Timer.js"></script>
 <script src="web.js"></script>
 <link rel="stylesheet" type="text/css" href="Css.css">
 </head>
@@ -27,11 +26,13 @@
     <button id="m2" class="music-button" data-music="music/Piano/Sixteen Waltzes, Op. 39_ No. 15.mp3" style="top: 30%; right: 10%;">Sixteen Waltzes</button>
     <button id="m2" class="music-button" data-music="music/Piano/Spring Song, Op. 62 No. 6.mp3" style="top: 35%; right: 10%;">Spring Song</button>
 
-    <button id="playStopButton" onclick="playStopTimer()" style="position: fixed; top: 80%; left: 50%; background-image: url('icons/clock.day.png')"></button>
+    <button id="playStopButton" onclick="playStopTimer()" style="position: fixed; top: 80%; left: 50%;"></button>
     
     <div id="timerDisplay">0:00:00</div>
     <div id="congratsMessage">Congratulations! You've learned</div> 
 </div>
 <input type="hidden" id="currentInterfaceValue" value="main-interface1">
+
+<script src="Timer.js"></script>
 </body>
 </html>

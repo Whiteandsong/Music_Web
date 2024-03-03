@@ -40,6 +40,12 @@ function playStopTimer() {
         icon.style.backgroundImage = 'url("icons/clock.day.png")';
         timerRunning = false;
         localStorage.setItem('timerRunning', 'false');}
+
+        elapsedTime = 0;
+        lastTime = 0;
+        // timerDisplay.textContent = "0:00:00"; // Reset displayed time
+        localStorage.removeItem('formattedTime'); // Remove stored formatted time
+        localStorage.removeItem('elapsedTime');
 }
 
 

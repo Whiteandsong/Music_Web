@@ -9,15 +9,18 @@ var timerDisplay = document.getElementById("timerDisplay");
 var congratsMessage = document.getElementById("congratsMessage");
 
 // Check if timer is already running
-if (localStorage.getItem('timerRunning') === 'true') {
-    timerRunning = true;
-    startTimer();
-    icon.style.backgroundImage = 'url("icons/clock.dark.png")';
-    timerDisplay.style.display = "block"; // Ensure timer display is visible
-    timerDisplay.textContent = localStorage.getItem('formattedTime'); // Show the previously stored time
-} else {
-    icon.style.backgroundImage = 'url("icons/clock.day.png")';
-}
+window.onload = function() {
+    if (localStorage.getItem('timerRunning') === 'true') {
+        timerRunning = true;
+        lastTime = parseInt(localStorage.getItem('elapsedTime')) || 0; // Retrieve elapsed time
+        startTimer();
+        icon.style.backgroundImage = 'url("icons/clock.dark.png")';
+        timerDisplay.style.display = "block"; // Ensure timer display is visible
+        timerDisplay.textContent = localStorage.getItem('formattedTime') || '0:00:00'; // Show the previously stored time
+    } else {
+        icon.style.backgroundImage = 'url("icons/clock.day.png")';
+    }
+};
 
 function playStopTimer() {
     if (!timerRunning) {
@@ -36,14 +39,12 @@ function playStopTimer() {
         congratsMessage.style.display = "block";
         icon.style.backgroundImage = 'url("icons/clock.day.png")';
         timerRunning = false;
-        localStorage.setItem('timerRunning', 'false');
-        elapsedTime = 0;
-        lastTime = 0;
-    }
+        localStorage.setItem('timerRunning', 'false');}
 }
 
-function startTimer() {
-    clearInterval(timerInterval);
+
+function startTimer() 
+{
     var formattedTime = formatElapsedTime(elapsedTime);
     timerDisplay.textContent = formattedTime;
     startTime = new Date().getTime() - elapsedTime;
@@ -52,11 +53,13 @@ function startTimer() {
 
 function updateTimer() {
     var currentTime = new Date().getTime();
-    elapsedTime = currentTime - startTime + lastTime;
+    var elapsedTimeWithoutLastTime = currentTime - startTime;
+    elapsedTime = elapsedTimeWithoutLastTime + lastTime;
     if (timerRunning) {
         var formattedTime = formatElapsedTime(elapsedTime);
         timerDisplay.textContent = formattedTime;
         localStorage.setItem('formattedTime', formattedTime); // Store the formatted time
+        localStorage.setItem('elapsedTime', elapsedTime); // Store elapsed time
     }
 }
 

@@ -4,9 +4,11 @@ body {
     font-family: cursive;
 }
 h1 {
-    font-size: 20px; 
+    font-size: 19px; 
     line-height: 1.5; 
     position: absolute;
+    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
+    font-family: cursive;
     top: 10%;
     left: 15%; 
 }

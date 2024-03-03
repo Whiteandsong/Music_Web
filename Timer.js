@@ -5,6 +5,7 @@ var startTime;
 var elapsedTime = 0;
 var lastTime = 0;
 
+
 function playStopTimer() {
     var button = document.getElementById("playStopButton");
     if (!timerRunning) {

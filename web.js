@@ -1,16 +1,5 @@
-﻿var originalTexts = {
-    "button2": "White Noise",
-    "button3": "Natural Sound",
-    "button4": "Cosmic Sound",
-    "button5": "Sound",
-    "main": "Main",
-    "1": "Sound 1",
-    "2": "Sound 2",
-    "3": "Sound 3"
+﻿var currentBackgroundIndex = 0;
 
-};
-
-var currentBackgroundIndex = 0
 var backgroundImages = {
     'main-interface': ['background-images/main\ interface.day.png', 'background-images/main\ interface-dark.png'],
     'main-interface1': ['background-images/tree.day.png', 'background-images/tree-dark.png'],
@@ -140,6 +129,7 @@ document.addEventListener("DOMContentLoaded", function() {
     buttons.forEach(function(button) {
         button.addEventListener('click', function() {
             var musicFile = button.getAttribute('data-music');
+            alert('Button clicked: ' + button.id);
             if (musicFile) {
                 audioPlayer.src = musicFile;
                 audioPlayer.play();

@@ -170,10 +170,11 @@ h1 {
 .music-button{
     position: absolute; 
     padding: 10px 20px;
-    background-color: #ffffff00;
+    background-color: #ad202000;
     color: #000;
     border: none;
     cursor: pointer;
+    pointer-events: auto;
     font-size: 15px;
     text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
     font-family: cursive;
@@ -185,21 +186,23 @@ h1 {
     background-color: #f0f0f000;
     position: relative;
     margin: 0;
-    padding: 0;
-    top: 16%;
+    padding: 10;
+    top: 15%;
     left: 15%;
+    z-index: 2;
+    pointer-events: auto;
     text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
-
 }
 #Task .task {
     border: none; /* 去除按钮的边框 */
     background-color: #00000000;
     text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
-
-    
+    z-index: 1;
 }
 #Task .task-contanier {
     border: none; /* 去除按钮的边框 */
+    z-index: 1;
+    padding: 10px;
     background-color: #00000000;
     text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
     font-family: cursive;
@@ -212,4 +215,5 @@ h1 {
 #inputContainer {
     display: none ;
     align-items: center;
+
 }

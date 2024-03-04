@@ -2,10 +2,10 @@
 
 var backgroundImages = {
     'main-interface': ['background-images/main\ interface.day.png', 'background-images/main\ interface-dark.png'],
-    'main-interface1': ['background-images/tree.day.png', 'background-images/tree-dark.png'],
+    'main-interface4': ['background-images/tree.day.png', 'background-images/tree-dark.png'],
     'main-interface2': ['background-images/day-day.png', 'background-images/day-dark.png'],
     'main-interface3': ['background-images/city-day.jpg', 'background-images/city-dark.jpg'],
-    'main-interface4': ['background-images/sky-day.png', 'background-images/sky-dark.png'],
+    'main-interface1': ['background-images/sky-day.png', 'background-images/sky-dark.png'],
 };
 
 var currentImageIndex = 0;

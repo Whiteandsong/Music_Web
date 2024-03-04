@@ -31,7 +31,7 @@ h1 {
     position: relative;
     margin: 0;
     padding: 0;
-    background-image: url('background-images/tree.day.png'); 
+    background-image: url('background-images/sky-day.png'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -67,7 +67,7 @@ h1 {
     position: relative;
     margin: 0;
     padding: 0;
-    background-image: url('background-images/sky-day.png'); 
+    background-image: url('background-images/tree.day.png'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

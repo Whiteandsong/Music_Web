@@ -16,8 +16,8 @@ var statusImages= [
 
 var messageArray = [
     "Congratulations! You've learned",
-    "Congratulations! You've enjoyed",
-    "Congratulations! You've slept for",];
+    "It's time for work! You've enjoyed",
+    "Welcome back! You've slept for",];
 
 // 分屏移动
 function toggleSplitInterface() {

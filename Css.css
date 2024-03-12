@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: cursive;
+    font-family: Garamond, serif;
 }
 h1 {
     font-size: 18px; 
@@ -81,7 +81,6 @@ p1 {
     background-attachment: fixed;
 }
 #split-interface {
-    font-size: 44px; 
     width: 25%;
     height: 100%;
     background-color: rgba(237, 234, 226, 0.7);
@@ -174,7 +173,7 @@ p1 {
     color: #000;
     border: none;
     cursor: pointer;
-    font-family: cursive;
+    font-family: Garamond, serif;;
 }
 .music-button{
     position: absolute; 
@@ -188,7 +187,7 @@ p1 {
     font-size: 15px;
     z-index: 2;
     text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
-    font-family: cursive;
+    font-family: Garamond, serif;
 }
 #Task {
     background-color: #f0f0f000;

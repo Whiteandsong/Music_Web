@@ -7,16 +7,14 @@ h1 {
     font-size: 18px; 
     line-height: 1.5; 
     position: absolute;
-    /* text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732); */
-    -webkit-text-stroke:0.5px rgba(249, 241, 241, 0.623);
-    text-align: center;
+    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
     font-family: cursive;
     top: 10%;
     left: 15%; 
 }
 h2,h3,p {
-    -webkit-text-stroke:1px rgb(253, 253, 253);
-    text-align: center;
+    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
+    font-family: cursive;
 }
 p1 {
     text-align: center;
@@ -224,7 +222,7 @@ text-decoration: line-through;
     top: 8%;
     left: 15%;
     transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.609);
+    background: rgba(255, 240, 231, 0.749);
     padding: 20px;
     max-width: 300px;
     flex-direction: column;

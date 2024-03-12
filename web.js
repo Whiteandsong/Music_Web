@@ -143,10 +143,10 @@ let currentGuide = 1;
 const totalGuides = 4; 
 
 const guidePositions = {
-    1: { top: '8%', left: '15%' },
-    2: { top: '80%', left: '28%' },
-    3: { top: '80%', left: '52%' },
-    4: { top: '80%', left: '75%' },
+    1: { top: '8%', left: '20%' },
+    2: { top: '77%', left: '29%' },
+    3: { top: '77%', left: '52%' },
+    4: { top: '77%', left: '76%' },
   };
 
 function showConfirmation() {

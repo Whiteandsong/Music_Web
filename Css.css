@@ -81,6 +81,7 @@ p1 {
     background-attachment: fixed;
 }
 #split-interface {
+    font-size: 44px; 
     width: 25%;
     height: 100%;
     background-color: rgba(237, 234, 226, 0.7);

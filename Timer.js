@@ -35,7 +35,7 @@ function playStopTimer() {
     } else {
         clearInterval(timerInterval);
         timerDisplay.style.buttom = "20%";
-        timerDisplay.style.left = "59%";
+        timerDisplay.style.left = "58.5%";
         congratsMessage.style.display = "block";
         icon.style.backgroundImage = 'url("icons/clock.day.png")';
         timerRunning = false;

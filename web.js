@@ -17,7 +17,7 @@ var statusImages= [
 var messageArray = [
     "Congratulations! You've learned",
     "It's time for work! You've enjoyed",
-    "Welcome back! You've slept for",];
+    "Welcome back!!! You've slept for",];
 
 // Move SplitInterface
 function toggleSplitInterface() {

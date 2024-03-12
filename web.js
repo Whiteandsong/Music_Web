@@ -19,7 +19,7 @@ var messageArray = [
     "It's time for work! You've enjoyed",
     "Welcome back! You've slept for",];
 
-// 分屏移动
+// Move SplitInterface
 function toggleSplitInterface() {
     var splitInterface = document.getElementById('split-interface');
     var button1 = document.getElementById('button1');
@@ -93,7 +93,7 @@ function toggleIconImage() {
     toggleBackgroundImage()
 }
 
-// 根据当前界面接口切换背景图片
+// Change Backgrounimage
 function toggleBackgroundImage() {
     var currentInterface = document.getElementById('currentInterfaceValue').value;
     var mainInterface = document.getElementById('main-interface');
@@ -103,7 +103,7 @@ function toggleBackgroundImage() {
     var mainInterface4 = document.getElementById('main-interface4');
 
     currentBackgroundIndex = (currentBackgroundIndex + 1) % 2
-    // 根据当前界面接口修改背景图片
+    // According to the currentInterface to change background
     if (currentInterface === 'main-interface') {
         mainInterface.style.backgroundImage = 'url("' + backgroundImages['main-interface'][currentBackgroundIndex] + '")';
     } 
@@ -137,3 +137,48 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+
+let currentGuide = 1;
+const totalGuides = 4; 
+
+const guidePositions = {
+    1: { top: '8%', left: '15%' },
+    2: { top: '80%', left: '28%' },
+    3: { top: '80%', left: '52%' },
+    4: { top: '80%', left: '75%' },
+  };
+
+function showConfirmation() {
+    document.getElementById('confirmation').style.display = 'block';
+}
+
+function acceptGuide() {
+    document.getElementById('confirmation').style.display = 'none';
+    showGuide();
+}
+
+function rejectGuide() {
+    document.getElementById('confirmation').style.display = 'none';
+}
+
+function showGuide() {
+    const nextGuideElement = document.getElementById('guide' + currentGuide);
+    nextGuideElement.classList.add('active');
+
+    if (guidePositions[currentGuide]) {
+      nextGuideElement.style.top = guidePositions[currentGuide].top;
+      nextGuideElement.style.left = guidePositions[currentGuide].left;
+    }
+}
+
+function nextGuide() {
+    if (currentGuide < totalGuides) {
+      document.getElementById('guide' + currentGuide).classList.remove('active');
+      currentGuide++;
+      showGuide();
+    } else {
+      alert('Instructions Finished');
+      document.getElementById('guide' + currentGuide).classList.remove('active');
+    }
+}

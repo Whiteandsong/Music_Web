@@ -51,6 +51,32 @@
     ">Clear Tasks</button>
 </div>
 
+<div class="guide-container" id="confirmation" style="display: block; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%)">
+    <p1>Do you need basic instructions？</p1>
+    <button class = instru_button onclick="acceptGuide()">Yes</button>
+    <button class = instru_button onclick="rejectGuide()">No</button>
+</div>
+
+<div class="guide-container" id="guide1">
+<p1>Menu Button<br/>You can choose music list here</Button></p1>
+<button class = instru_button onclick="nextGuide()">Next</button>
+</div>
+
+<div class="guide-container" id="guide2">
+<p1>第二个动画介绍</p1>
+<button class = instru_button onclick="nextGuide()">Next</button>
+</div>
+
+<div class="guide-container" id="guide3">
+<p1>第三个动画介绍</p1>
+<button class = instru_button onclick="nextGuide()">Next</button>
+</div>
+
+<div class="guide-container" id="guide4">
+    <p1>第四个动画介绍</p1>
+    <button class = instru_button onclick="nextGuide()">Next</button>
+</div>
+
 </div>
 
 <input type="hidden" id="currentInterfaceValue" value="main-interface">

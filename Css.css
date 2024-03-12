@@ -8,15 +8,19 @@ h1 {
     line-height: 1.5; 
     position: absolute;
     /* text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732); */
-    -webkit-text-stroke:1px rgb(80, 80, 80);
+    -webkit-text-stroke:0.5px rgba(249, 241, 241, 0.623);
     text-align: center;
     font-family: cursive;
     top: 10%;
     left: 15%; 
 }
 h2,h3,p {
-    -webkit-text-stroke:1px rgb(80, 80, 80);
+    -webkit-text-stroke:1px rgb(253, 253, 253);
     text-align: center;
+}
+p1 {
+    text-align: center;
+    color : #000;
 }
 #main-interface {
     width: 100%;
@@ -209,9 +213,29 @@ h2,h3,p {
     list-style-type: none;
     padding: 0;
   }
-  .taskItem {
-    margin-bottom: 10px;
-  }
-  .taskItem.completed {
-    text-decoration: line-through;
-  }
+.taskItem {
+margin-bottom: 10px;
+}
+.taskItem.completed {
+text-decoration: line-through;
+}
+.guide-container {
+    position: fixed;
+    top: 8%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.609);
+    padding: 20px;
+    max-width: 300px;
+    flex-direction: column;
+    text-align: center;
+    display: none;
+}
+.guide-container.active {
+    display: flex;
+}
+.instru_button{
+    border: none;
+    background-color: #0b000058;
+
+}

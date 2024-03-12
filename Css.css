@@ -8,13 +8,13 @@ h1 {
     line-height: 1.5; 
     position: absolute;
     text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
-    font-family: cursive;
+    font-family: fantasy;
     top: 10%;
     left: 15%; 
 }
 h2,h3,p {
     text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
-    font-family: cursive;
+    font-family: fantasy;
 }
 p1 {
     text-align: center;

@@ -228,12 +228,13 @@ text-decoration: line-through;
     flex-direction: column;
     text-align: center;
     display: none;
+    border-radius: 15px;
 }
 .guide-container.active {
     display: flex;
 }
 .instru_button{
     border: none;
-    background-color: #0b000058;
+    background-color: #59534661;
 
 }

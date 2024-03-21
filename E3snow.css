@@ -5,45 +5,41 @@
   .snow::after {
     content: "";
 
-    background: radial-gradient(3px 3px at 100px 50px, #ffffff, transparent),
-      radial-gradient(4px 4px at 200px 150px, #ffffff, transparent),
-      radial-gradient(5px 5px at 300px 80px, #ffffff, transparent),
-      radial-gradient(6px 6px at 400px 130px, #fff, transparent),
-      radial-gradient(3px 3px at 540px 480px, #fff, transparent),
-      radial-gradient(4px 4px at 50px 230px, #fff, transparent),
-      radial-gradient(5px 5px at 120px 680px, #fff, transparent),
-      radial-gradient(6px 6px at 223px 430px, #fff, transparent),
-      radial-gradient(3px 3px at 700px 300px, #fff, transparent),
-      radial-gradient(4px 4px at 760px 550px, #fff, transparent),
-      radial-gradient(5px 5px at 550px 280px, #fff, transparent),
-      radial-gradient(6px 6px at 650px 630px, #fff, transparent);
+    background: radial-gradient(3px 3px at 100px 50px, #fffca5, transparent),
+      radial-gradient(4px 4px at 200px 150px, #fffca5, transparent),
+      radial-gradient(5px 5px at 300px 80px, #fffca5, transparent),
+      radial-gradient(6px 6px at 400px 130px, #fffca5, transparent),
+      radial-gradient(3px 3px at 540px 480px, #fffca5, transparent),
+      radial-gradient(4px 4px at 50px 230px, #fffca5, transparent),
+      radial-gradient(10px 10px at 120px 680px, #fffca5, transparent),
+      radial-gradient(6px 6px at 223px 430px, #fffca5, transparent);
     background-size: 800px 800px;
 
     position: fixed;
     inset: -800px 0 0 0;
 
-    animation: animate 5s linear infinite;
+    animation: animate 100s linear infinite;
     z-index: 2; 
   }
   .snow::before {
-    margin: -390px;
-    opacity: 0.6;
+    margin: -130px;
+    opacity: 0.8;
 
     animation-duration: 6s;
     animation-delay: -1.5s;
   }
   .snow::after {
-    margin: -130px;
-    opacity: 0.8;
+    margin: -390px;
+    opacity: 0.6;
   
     animation-duration: 10s;
   }
   
   @keyframes animate {
     0% {
-      transform: translateY(0);
+      transform: translateY(800px);
     }
     100% {
-      transform: translateY(800px);
+      transform: translateY(0px);
     }
 }

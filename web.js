@@ -71,9 +71,11 @@ function statustoggleImage() {
     localStorage.setItem('SatutsImageIndex', StatusImageIndex);
 }
 
-//Initialization
+//Initialization **********
 document.addEventListener("DOMContentLoaded", function() {
     initStatusImage();
+    initModeImage();
+    initBackgroundImage()
 });
 
 //text change
@@ -95,39 +97,79 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// Timer Icon change
+// Get local modeimage index
+function getStoredModeImageURL() {
+    return localStorage.getItem('ModeImageURL') || 'icons/dark.png';
+}
+
+// Initialization mode image
+function initModeImage() {
+    var toggleButton = document.getElementById('modeIconButton');
+    var imageURL = getStoredModeImageURL();
+    var timerDisplay = document.getElementById('timerDisplay')
+    var congratsMessage = document.getElementById("congratsMessage");
+    if (timerDisplay){
+        if (imageURL === 'url("icons/dark.png")'){
+            timerDisplay.style.color = 'white'
+            congratsMessage.style.color = 'white'
+        }else{
+            timerDisplay.style.color = 'black'
+            congratsMessage.style.color = 'black'
+        }
+    }
+    
+    // set URL
+    toggleButton.style.backgroundImage = imageURL;
+}
+
+//Mode Icon change
 function toggleIconImage() {
     var toggleButton = document.getElementById('modeIconButton');
+    var imageURL = 'url("icons/light.png")';
     var timerDisplay = document.getElementById('timerDisplay')
     var congratsMessage = document.getElementById("congratsMessage");
 
     if (toggleButton.style.backgroundImage === 'url("icons/dark.png")') { 
         toggleButton.style.backgroundImage = 'url("icons/light.png")';
+        imageURL = 'url("icons/light.png")';
         if (timerDisplay){
             timerDisplay.style.color = 'black'
             congratsMessage.style.color = 'black'
         }
+        currentBackgroundIndex = 0;
     } else {
         toggleButton.style.backgroundImage = 'url("icons/dark.png")';
+        imageURL = 'url("icons/dark.png")';
         if (timerDisplay){
             timerDisplay.style.color = 'white'
             congratsMessage.style.color = 'white'
         }
+        currentBackgroundIndex = 1;
     }
-
-    toggleBackgroundImage()
+    //save it
+    localStorage.setItem('ModeImageURL', imageURL);
+    changeBackgroundImage(currentBackgroundIndex)
+    localStorage.setItem('BacgroundImageIndex', currentBackgroundIndex);
 }
 
-// Change Backgrounimage
-function toggleBackgroundImage() {
+// Get local backgroundimage index
+function getStoredBackgroundImageURL() {
+    return localStorage.getItem('BacgroundImageIndex') || 0;
+}
+
+// Initialization mode image
+function initBackgroundImage() {
+    currentBackgroundIndex = getStoredBackgroundImageURL()
+    changeBackgroundImage(currentBackgroundIndex)
+}
+
+function changeBackgroundImage(currentBackgroundIndex) {
     var currentInterface = document.getElementById('currentInterfaceValue').value;
     var mainInterface = document.getElementById('main-interface');
     var mainInterface1 = document.getElementById('main-interface1');
     var mainInterface2 = document.getElementById('main-interface2');
     var mainInterface3 = document.getElementById('main-interface3');
     var mainInterface4 = document.getElementById('main-interface4');
-
-    currentBackgroundIndex = (currentBackgroundIndex + 1) % 2
     // According to the currentInterface to change background
     if (currentInterface === 'main-interface') {
         mainInterface.style.backgroundImage = 'url("' + backgroundImages['main-interface'][currentBackgroundIndex] + '")';
@@ -145,6 +187,7 @@ function toggleBackgroundImage() {
         mainInterface4.style.backgroundImage = 'url("' + backgroundImages['main-interface4'][currentBackgroundIndex] + '")'; 
     }
 }
+
 
 
 document.addEventListener("DOMContentLoaded", function() {

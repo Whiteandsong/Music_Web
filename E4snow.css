@@ -5,14 +5,14 @@
   .snow::after {
     content: "";
 
-    background: radial-gradient(3px 3px at 100px 50px, #fffca5, transparent),
-      radial-gradient(4px 4px at 200px 150px, #fffca5, transparent),
-      radial-gradient(5px 5px at 300px 80px, #fffca5, transparent),
-      radial-gradient(6px 6px at 400px 130px, #fffca5, transparent),
-      radial-gradient(3px 3px at 540px 480px, #fffca5, transparent),
-      radial-gradient(4px 4px at 50px 230px, #fffca5, transparent),
-      radial-gradient(10px 10px at 120px 680px, #fffca5, transparent),
-      radial-gradient(6px 6px at 223px 430px, #fffca5, transparent);
+    background: radial-gradient(5px 5px at 100px 50px, #d1e8ff, transparent),
+      radial-gradient(8px 8px at 200px 150px, #d1e8ff, transparent),
+      radial-gradient(7px 7px at 300px 80px, #d1e8ff, transparent),
+      radial-gradient(6px 6px at 400px 130px, #d1e8ff, transparent),
+      radial-gradient(5px 5px at 540px 480px, #d1e8ff, transparent),
+      radial-gradient(8px 8px at 50px 230px, #d1e8ff, transparent),
+      radial-gradient(10px 10px at 120px 680px, #d1e8ff, transparent),
+      radial-gradient(6px 6px at 223px 430px, #d1e8ff, transparent);
     background-size: 800px 800px;
 
     position: fixed;

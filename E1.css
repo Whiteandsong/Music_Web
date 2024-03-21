@@ -2,13 +2,24 @@
     margin: 0;
     padding: 0;
 }
-body{
+body {
+    margin: 0;
+    padding: 0;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(200deg,#e3c5eb,#a9c1ed);
-    overflow: hidden;
+    background: url('background-images/city-day.png') center/cover no-repeat;
+    background-blend-mode: overlay;
+    animation: dynamicEffect 10s linear infinite;
+}
+@keyframes dynamicEffect {
+    0% {
+        background-position: 0 0, 0 0;
+    }
+    100% {
+        background-position: 100% 0, 100% 100%;
+    }
 }
 ul li{
     position: absolute;
@@ -66,7 +77,6 @@ ul li{
     animation-delay: 6s;
 }
 
-/* 定义动画 */
 @keyframes square {
     0%{
         transform: scale(0) rotateY(0deg);

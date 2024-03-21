@@ -206,10 +206,12 @@ p1 {
     text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
     top: 20%;
     left: 15%;
+    z-index: 2;
   }
 #taskList {
     list-style-type: none;
     padding: 0;
+    z-index: 2;
   }
 .taskItem {
 margin-bottom: 10px;

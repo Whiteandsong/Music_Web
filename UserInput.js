@@ -44,8 +44,14 @@ function addTask() {
 }
 
 function clearTasks() {
-  localStorage.clear();
   tasks = [];
+  localStorage.setItem('tasks', JSON.stringify(tasks)); // Clear tasks data in localStorage
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key.startsWith('task_')) {
+      localStorage.removeItem(key); // Clear all task completion statuses in localStorage
+    }
+  }
   renderTasks();
 }
 

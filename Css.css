@@ -31,6 +31,7 @@ p1 {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    z-index: 1; 
 }
 #main-interface1 { /* 钢琴曲 */
     width: 100%;
@@ -43,6 +44,7 @@ p1 {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    z-index: 1; 
 }
 #main-interface2 { /* 纯音乐 */
     width: 100%;
@@ -86,8 +88,9 @@ p1 {
     background-color: rgba(237, 234, 226, 0.7);
     position: absolute;
     top: 0;
-    left: -20%;
+    left: 0%;
     transition: left 0.5s ease;
+    z-index: 2;
 }
 #modeIconButton {
     position: fixed;
@@ -100,6 +103,7 @@ p1 {
     border: none;
     width: 7%; 
     height: 7%;
+    z-index: 2;
 }
 #statusIconButton {
     position: fixed;
@@ -112,6 +116,7 @@ p1 {
     border: none;
     width: 6%; 
     height: 6%;
+    z-index: 2;
 }
 #playStopButton {
     position: fixed;
@@ -123,6 +128,7 @@ p1 {
     border: none;
     width: 10%; 
     height: 10%;
+    z-index: 2;
 }
 #timerDisplay {
     display: none; 
@@ -135,6 +141,7 @@ p1 {
     transform: translate(-50%, -50%);
     font-size: 2vw;
     font-family: fantasy;
+    z-index: 2;
 }
 #congratsMessage {
     display: none;
@@ -145,6 +152,7 @@ p1 {
     transform: translate(-50%, -50%);
     font-size: 2vw;
     font-family: fantasy;
+    z-index: 2;
 }
 #inputContainer {
     display: none;
@@ -164,6 +172,7 @@ p1 {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    z-index: 3; 
 }
 .split-button {
     display: none;

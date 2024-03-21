@@ -8,71 +8,50 @@
 <link rel="stylesheet" type="text/css" href="Css.css">
 <link rel="stylesheet" href="E2snow.css">
 </head>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: url('background-images/sky-day.png') center/cover no-repeat;
-    }
-    #dynamic-effects {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        pointer-events: none;
-    }
-</style>
 
 <body>
 <div class="snow"></div>
 <div id="dynamic-effects"></div>
 
 <div id="main-interface1"> 
-    <button id="button1" class = "button1" onclick="toggleSplitInterface()"></button>
-    <h1>You can list your To-Do here:</h1>
-    <button id="modeIconButton" style="position: fixed; background-image: url('icons/light.png')" onclick="toggleIconImage()"></button>
-    <button id="statusIconButton" style = "background-image: url('icons/Reading.png')" onclick="statustoggleImage()"></button>
+</div>
+<button id="button1" class = "button1" onclick="toggleSplitInterface()"></button>
+<h1>You can list your To-Do here:</h1>
+<button id="modeIconButton" style="position: fixed; background-image: url('icons/light.png')" onclick="toggleIconImage()"></button>
+<button id="statusIconButton" style = "background-image: url('icons/Reading.png')" onclick="statustoggleImage()"></button>
 
-    <div id="split-interface" style="left:-20%">
-        <button id="button1" class="split-button" style="font-size: 19px; top: 17%; left: 80px;" data-target="index.html">Main</button>
-        <button id="button2" class="split-button" style="font-size: 19px; top: 27%; left: 80px;" data-target="0.html">Piano</button>
-        <button id="button3" class="split-button" style="font-size: 19px; top: 37%; left: 80px;" data-target="1.html">Light Song</button>
-        <button id="button4" class="split-button" style="font-size: 19px; top: 47%; left: 80px;" data-target="2.html">Popular</button>
-        <button id="button5" class="split-button" style="font-size: 19px; top: 57%; left: 80px;" data-target="3.html">White noise</button>     
+<div id="split-interface" style="left:-20%">
+    <button id="button1" class="split-button" style="font-size: 19px; top: 17%; left: 80px;" data-target="index.html">Main</button>
+    <button id="button2" class="split-button" style="font-size: 19px; top: 27%; left: 80px;" data-target="0.html">Piano</button>
+    <button id="button3" class="split-button" style="font-size: 19px; top: 37%; left: 80px;" data-target="1.html">Light Song</button>
+    <button id="button4" class="split-button" style="font-size: 19px; top: 47%; left: 80px;" data-target="2.html">Popular</button>
+    <button id="button5" class="split-button" style="font-size: 19px; top: 57%; left: 80px;" data-target="3.html">White noise</button>     
+</div>
+<audio controls id="audioPlayer" loop style="position: fixed; top: 63%; left: 80%; transform: translate(-50%, -50%);"></audio>
+<button id="m1" class="music-button" data-music="music/Piano/Clair de lune. CD 82, L. 75_ III.mp3" style="top: 8%; right: 10%; text-align: right;">Clair de lune. CD 82, L. 75_ III<br><span style="font-size: smaller; color: rgb(88, 88, 88);">by Debussy</span></button>
+<button id="m2" class="music-button" data-music="music/Piano/The Swan Lake.mp3" style="top: 16%; right: 10%; text-align: right;">The Swan Lake<br><span style="font-size: smaller; color: rgb(88, 88, 88);">by Tchaikovesky</span></button>
+<button id="m3" class="music-button" data-music="music/Piano/Nocturne in E flat major Op.9 No.2.mp3" style="top: 24%; right: 10%; text-align: right;">Nocturne, op.9 no.2<br><span style="font-size: smaller; color: rgb(88, 88, 88);">by Chopin</span></button>
+<button id="m4" class="music-button" data-music="music/Piano/Reverie L.68.mp3" style="top: 32%; right: 10%; text-align: right;">Reverie<br><span style="font-size: smaller; color: rgb(88, 88, 88);">by Debussy</span></button>
+<button id="m5" class="music-button" data-music="music/Piano/Sixteen Waltzes, Op. 39_ No. 15.mp3" style="top: 40%; right: 10%; text-align: right;">Sixteen Waltzes, op.39<br><span style="font-size: smaller; color: rgb(88, 88, 88);">by Brahms</span></button>
+<button id="m6" class="music-button" data-music="music/Piano/Spring Song, Op. 62 No. 6.mp3" style="top: 48%; right: 10%; text-align: right;">Spring Song<br><span style="font-size: smaller; color: rgb(88, 88, 88);">by Mendelssohn</span></button>
+
+<button id="playStopButton" onclick="playStopTimer()" style="position: fixed; bottom: 10%; left: 50%; width: 6%; height: 6%; background-image: url('icons/clock.day.png')"></button>
+
+<div id="timerDisplay">0:00:00</div>
+<div id="congratsMessage">Congratulations! You've learned</div> 
+
+<div id="taskContainer">
+    <button onclick="openInput()" style = "border: none; background-color: rgba(240, 248, 255, 0); text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
+    font-family: fantasy">Add Task</button>
+
+    <div id="inputContainer" style="display: none;">
+        <input type="text" id="taskInput">
+        <button onclick="addTask()" style = "border: none; background-color: rgba(240, 248, 255, 0); text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
+        font-family: fantasy">Add</button>
     </div>
-    <audio controls id="audioPlayer" loop style="position: fixed; top: 63%; left: 80%; transform: translate(-50%, -50%);"></audio>
-    <button id="m1" class="music-button" data-music="music/Piano/Clair de lune. CD 82, L. 75_ III.mp3" style="top: 8%; right: 10%; text-align: right;">Clair de lune. CD 82, L. 75_ III<br><span style="font-size: smaller; color: rgb(88, 88, 88);">by Debussy</span></button>
-    <button id="m2" class="music-button" data-music="music/Piano/The Swan Lake.mp3" style="top: 16%; right: 10%; text-align: right;">The Swan Lake<br><span style="font-size: smaller; color: rgb(88, 88, 88);">by Tchaikovesky</span></button>
-    <button id="m3" class="music-button" data-music="music/Piano/Nocturne in E flat major Op.9 No.2.mp3" style="top: 24%; right: 10%; text-align: right;">Nocturne, op.9 no.2<br><span style="font-size: smaller; color: rgb(88, 88, 88);">by Chopin</span></button>
-    <button id="m4" class="music-button" data-music="music/Piano/Reverie L.68.mp3" style="top: 32%; right: 10%; text-align: right;">Reverie<br><span style="font-size: smaller; color: rgb(88, 88, 88);">by Debussy</span></button>
-    <button id="m5" class="music-button" data-music="music/Piano/Sixteen Waltzes, Op. 39_ No. 15.mp3" style="top: 40%; right: 10%; text-align: right;">Sixteen Waltzes, op.39<br><span style="font-size: smaller; color: rgb(88, 88, 88);">by Brahms</span></button>
-    <button id="m6" class="music-button" data-music="music/Piano/Spring Song, Op. 62 No. 6.mp3" style="top: 48%; right: 10%; text-align: right;">Spring Song<br><span style="font-size: smaller; color: rgb(88, 88, 88);">by Mendelssohn</span></button>
-
-    <button id="playStopButton" onclick="playStopTimer()" style="position: fixed; bottom: 10%; left: 50%; width: 6%; height: 6%; background-image: url('icons/clock.day.png')"></button>
-    
-    <div id="timerDisplay">0:00:00</div>
-    <div id="congratsMessage">Congratulations! You've learned</div> 
-
-    <div id="taskContainer">
-        <button onclick="openInput()" style = "border: none; background-color: rgba(240, 248, 255, 0); text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
-        font-family: fantasy">Add Task</button>
-    
-        <div id="inputContainer" style="display: none;">
-            <input type="text" id="taskInput">
-            <button onclick="addTask()" style = "border: none; background-color: rgba(240, 248, 255, 0); text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
-            font-family: fantasy">Add</button>
-        </div>
-        <ul id="taskList"></ul>
-        <button onclick="clearTasks()" style = "border: none; background-color: rgba(240, 248, 255, 0); text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732); font-family: fantasy
-        ">Clear Tasks</button>
-    </div>
-
+    <ul id="taskList"></ul>
+    <button onclick="clearTasks()" style = "border: none; background-color: rgba(240, 248, 255, 0); text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732); font-family: fantasy
+    ">Clear Tasks</button>
 </div>
 <input type="hidden" id="currentInterfaceValue" value="main-interface1">
 

@@ -1,21 +1,13 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body {
-    min-height: 100vh;
-    background-color: #111111;
-  }
+
   
   .snow,
   .snow::before,
   .snow::after {
     content: "";
 
-    background: radial-gradient(3px 3px at 100px 50px, #fff, transparent),
-      radial-gradient(4px 4px at 200px 150px, #fff, transparent),
-      radial-gradient(5px 5px at 300px 80px, #fff, transparent),
+    background: radial-gradient(3px 3px at 100px 50px, #ffffff, transparent),
+      radial-gradient(4px 4px at 200px 150px, #ffffff, transparent),
+      radial-gradient(5px 5px at 300px 80px, #ffffff, transparent),
       radial-gradient(6px 6px at 400px 130px, #fff, transparent),
       radial-gradient(3px 3px at 540px 480px, #fff, transparent),
       radial-gradient(4px 4px at 50px 230px, #fff, transparent),
@@ -27,10 +19,11 @@
       radial-gradient(6px 6px at 650px 630px, #fff, transparent);
     background-size: 800px 800px;
 
-    position: absolute;
+    position: fixed;
     inset: -800px 0 0 0;
 
     animation: animate 5s linear infinite;
+    z-index: 2; 
   }
   .snow::before {
     margin: -390px;

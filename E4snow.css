@@ -1,0 +1,45 @@
+
+  
+  .snow,
+  .snow::before,
+  .snow::after {
+    content: "";
+
+    background: radial-gradient(3px 3px at 100px 50px, #fffca5, transparent),
+      radial-gradient(4px 4px at 200px 150px, #fffca5, transparent),
+      radial-gradient(5px 5px at 300px 80px, #fffca5, transparent),
+      radial-gradient(6px 6px at 400px 130px, #fffca5, transparent),
+      radial-gradient(3px 3px at 540px 480px, #fffca5, transparent),
+      radial-gradient(4px 4px at 50px 230px, #fffca5, transparent),
+      radial-gradient(10px 10px at 120px 680px, #fffca5, transparent),
+      radial-gradient(6px 6px at 223px 430px, #fffca5, transparent);
+    background-size: 800px 800px;
+
+    position: fixed;
+    inset: -800px 0 0 0;
+
+    animation: animate 100s linear infinite;
+    z-index: 2; 
+  }
+  .snow::before {
+    margin: -130px;
+    opacity: 0.8;
+
+    animation-duration: 6s;
+    animation-delay: -1.5s;
+  }
+  .snow::after {
+    margin: -390px;
+    opacity: 0.6;
+  
+    animation-duration: 10s;
+  }
+  
+  @keyframes animate {
+    0% {
+      transform: translateY(800px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+}

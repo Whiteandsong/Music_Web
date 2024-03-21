@@ -6,111 +6,55 @@
 <title>Split Interface</title>
 <script src="web.js"></script>
 <link rel="stylesheet" type="text/css" href="Css.css">
+<link rel="stylesheet" href="E2snow.css">
 </head>
-<style>
-    .shape {
-        position: absolute;
-        opacity: 0.5;
-        animation: rise 10s linear infinite;
-    }
 
-    .square {
-        width: 50px;
-        height: 50px;
-        background-color: rgba(255, 255, 255, 0.5);
-    }
-
-    .circle {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.5);
-    }
-
-    @keyframes square {
-    0%{
-        transform: scale(0) rotateY(0deg);
-        opacity: 1;
-    }
-    100%{
-        transform: scale(2) rotateY(1000deg);
-        opacity: 0;
-    }
-}
-@keyframes circle {
-    0%{
-        transform: scale(0) rotateY(0deg);
-        opacity: 1;
-        bottom: 0;
-        border-radius: 0;
-    }
-    100%{
-        transform: scale(2) rotateY(1000deg);
-        opacity: 0;
-        bottom: 90vh;
-        border-radius: 50%;
-    }
-}
-    @keyframes rise {
-        0% {
-            transform: scale(0.1) translateY(100vh);
-            opacity: 0.5;
-        }
-        33% {
-            opacity: 0.5;
-        }
-        66% {
-            opacity: 0;
-        }
-        100% {
-            transform: scale(2) translateY(-33vh);
-            opacity: 0;
-        }
-    }
-</style>
 <body>
+<div class="snow"></div>
+<div id="dynamic-effects"></div>
 
 <div id="main-interface3">
-    <button id="button1" class = "button1" onclick="toggleSplitInterface()"></button>
-    <h1>You can list your To-Do here:</h1>
-    <button id="modeIconButton" style="position: fixed; background-image: url('icons/light.png')" onclick="toggleIconImage()"></button>
-    <button id="statusIconButton" style = "background-image: url('icons/Reading.png')" onclick="statustoggleImage()"></button>
-
-    <div id="split-interface" style="left:-20%">
-        <button id="button1" class="split-button" style="font-size: 19px; top: 17%; left: 80px;" data-target="index.html">Main</button>
-        <button id="button2" class="split-button" style="font-size: 19px; top: 27%; left: 80px;" data-target="0.html">Piano</button>
-        <button id="button3" class="split-button" style="font-size: 19px; top: 37%; left: 80px;" data-target="1.html">Light Song</button>
-        <button id="button4" class="split-button" style="font-size: 19px; top: 47%; left: 80px;" data-target="2.html">Popular</button>
-        <button id="button5" class="split-button" style="font-size: 19px; top: 57%; left: 80px;" data-target="3.html">White noise</button>   
-    </div>
-    <audio controls id="audioPlayer" loop style="position: fixed; top: 63%; left: 80%; transform: translate(-50%, -50%);"></audio>
-    <button id="m1" class="music-button" data-music="music/有词曲/500 Miles.mp3" style="top: 8%; right: 10%; text-align: right">Five Hundred Miles<br><span style="font-size: smaller; color: rgb(88, 88, 88);">by Timberlake,et al</span></button>
-    <button id="m2" class="music-button" data-music="music/有词曲/Monsters.mp3" style="top: 16%; right: 10%; text-align: right">Monsters<br><span style="font-size: smaller; color: rgb(88, 88, 88);">by Sky</span></button>
-    <button id="m3" class="music-button" data-music="music/有词曲/See You Again ft. Charlie Puth.mp3" style="top: 24%; right: 10%; text-align: right">See You Again<br><span style="font-size: smaller; color: rgb(88, 88, 88);">by Wiz Khalifa</span></button>
-    <button id="m4" class="music-button" data-music="music/有词曲/Sleepyhead.mp3" style="top: 32%; right: 10%; text-align: right">Sleepyhead<br><span style="font-size: smaller; color: rgb(88, 88, 88);">by Crew</span></button>
-    <button id="m5" class="music-button" data-music="music/有词曲/Wolves.mp3" style="top: 40%; right: 10%; text-align: right">Wolves<br><span style="font-size: smaller; color: rgb(88, 88, 88);">by Gomez</span></button>
-    <button id="m6" class="music-button" data-music="music/有词曲/Young and Beautiful.mp3" style="top: 48%; right: 10%; text-align: right">Young and Beautiful<br><span style="font-size: smaller; color: rgb(88, 88, 88);">by Grant</span></button>
-
-    <button id="playStopButton" onclick="playStopTimer()" style="position: fixed; bottom: 10%;; left: 50%; width: 6%; height: 6%; background-image: url('icons/clock.day.png')"></button>
-    
-    <div id="timerDisplay">0:00:00</div>
-    <div id="congratsMessage">Congratulations! You've learned</div> 
-
-    <div id="taskContainer">
-        <button onclick="openInput()" style = "border: none; background-color: rgba(240, 248, 255, 0); text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
-        font-family: fantasy">Add Task</button>
-    
-        <div id="inputContainer" style="display: none;">
-            <input type="text" id="taskInput">
-            <button onclick="addTask()" style = "border: none; background-color: rgba(240, 248, 255, 0); text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
-            font-family: fantasy">Add</button>
-        </div>
-        <ul id="taskList"></ul>
-        <button onclick="clearTasks()" style = "border: none; background-color: rgba(240, 248, 255, 0); text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732); font-family: fantasy
-        ">Clear Tasks</button>
-    </div>
-
 </div>
+
+<button id="button1" class = "button1" onclick="toggleSplitInterface()"></button>
+<h1>You can list your To-Do here:</h1>
+<button id="modeIconButton" style="position: fixed; background-image: url('icons/light.png')" onclick="toggleIconImage()"></button>
+<button id="statusIconButton" style = "background-image: url('icons/Reading.png')" onclick="statustoggleImage()"></button>
+
+<div id="split-interface" style="left:-20%">
+    <button id="button1" class="split-button" style="font-size: 19px; top: 17%; left: 80px;" data-target="index.html">Main</button>
+    <button id="button2" class="split-button" style="font-size: 19px; top: 27%; left: 80px;" data-target="0.html">Piano</button>
+    <button id="button3" class="split-button" style="font-size: 19px; top: 37%; left: 80px;" data-target="1.html">Light Song</button>
+    <button id="button4" class="split-button" style="font-size: 19px; top: 47%; left: 80px;" data-target="2.html">Popular</button>
+    <button id="button5" class="split-button" style="font-size: 19px; top: 57%; left: 80px;" data-target="3.html">White noise</button>   
+</div>
+<audio controls id="audioPlayer" loop style="position: fixed; top: 63%; left: 80%; transform: translate(-50%, -50%);"></audio>
+<button id="m1" class="music-button" data-music="music/有词曲/500 Miles.mp3" style="top: 8%; right: 10%; text-align: right">Five Hundred Miles<br><span style="font-size: smaller; color: rgb(88, 88, 88);">by Timberlake,et al</span></button>
+<button id="m2" class="music-button" data-music="music/有词曲/Monsters.mp3" style="top: 16%; right: 10%; text-align: right">Monsters<br><span style="font-size: smaller; color: rgb(88, 88, 88);">by Sky</span></button>
+<button id="m3" class="music-button" data-music="music/有词曲/See You Again ft. Charlie Puth.mp3" style="top: 24%; right: 10%; text-align: right">See You Again<br><span style="font-size: smaller; color: rgb(88, 88, 88);">by Wiz Khalifa</span></button>
+<button id="m4" class="music-button" data-music="music/有词曲/Sleepyhead.mp3" style="top: 32%; right: 10%; text-align: right">Sleepyhead<br><span style="font-size: smaller; color: rgb(88, 88, 88);">by Crew</span></button>
+<button id="m5" class="music-button" data-music="music/有词曲/Wolves.mp3" style="top: 40%; right: 10%; text-align: right">Wolves<br><span style="font-size: smaller; color: rgb(88, 88, 88);">by Gomez</span></button>
+<button id="m6" class="music-button" data-music="music/有词曲/Young and Beautiful.mp3" style="top: 48%; right: 10%; text-align: right">Young and Beautiful<br><span style="font-size: smaller; color: rgb(88, 88, 88);">by Grant</span></button>
+
+<button id="playStopButton" onclick="playStopTimer()" style="position: fixed; bottom: 10%;; left: 50%; width: 6%; height: 6%; background-image: url('icons/clock.day.png')"></button>
+
+<div id="timerDisplay">0:00:00</div>
+<div id="congratsMessage">Congratulations! You've learned</div> 
+
+<div id="taskContainer">
+    <button onclick="openInput()" style = "border: none; background-color: rgba(240, 248, 255, 0); text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
+    font-family: fantasy">Add Task</button>
+
+    <div id="inputContainer" style="display: none;">
+        <input type="text" id="taskInput">
+        <button onclick="addTask()" style = "border: none; background-color: rgba(240, 248, 255, 0); text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732);
+        font-family: fantasy">Add</button>
+    </div>
+    <ul id="taskList"></ul>
+    <button onclick="clearTasks()" style = "border: none; background-color: rgba(240, 248, 255, 0); text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.732), 1px -1px 0 rgba(255, 255, 255, 0.732), -1px 1px 0 rgba(255, 255, 255, 0.732), 1px 1px 0 rgba(255, 255, 255, 0.732); font-family: fantasy
+    ">Clear Tasks</button>
+</div>
+
 <input type="hidden" id="currentInterfaceValue" value="main-interface3">
 
 <script src="Timer.js"></script>

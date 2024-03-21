@@ -8,7 +8,7 @@ var backgroundImages = {
     'main-interface1': ['background-images/sky-day.png', 'background-images/sky-dark.png'],
 };
 
-var currentImageIndex = 0;
+var StatusImageIndex = 0;
 var statusImages= [
     'icons/Reading.png',
     'icons/Enjoy.png',
@@ -40,16 +40,41 @@ function toggleSplitInterface() {
     }
 }
 
+//Get the local index
+function getStoredStatusImageIndex() {
+    return localStorage.getItem('SatutsImageIndex') || 0;
+}
+
+function initStatusImage() {
+    var toggleButton = document.getElementById('statusIconButton');
+
+    var storedIndex = getStoredStatusImageIndex();
+    StatusImageIndex = parseInt(storedIndex);
+    var currentStatusImage = 'url("' + statusImages[StatusImageIndex] + '")';
+    toggleButton.style.backgroundImage = currentStatusImage;
+    toggleButtonText(StatusImageIndex);
+
+}
+
 //change status
 function statustoggleImage() {
     var toggleButton = document.getElementById('statusIconButton');
 
-    currentImageIndex = (currentImageIndex + 1) % statusImages.length;
+    StatusImageIndex = (StatusImageIndex + 1) % statusImages.length;
+
+    var currentStatusImage = 'url("' + statusImages[StatusImageIndex] + '")';
+    toggleButton.style.backgroundImage = currentStatusImage;
     
-    toggleButton.style.backgroundImage = 'url("' + statusImages[currentImageIndex] + '")';
-    
-    toggleButtonText(currentImageIndex)
+    toggleButtonText(StatusImageIndex)
+
+    //Store it
+    localStorage.setItem('SatutsImageIndex', StatusImageIndex);
 }
+
+//Initialization
+document.addEventListener("DOMContentLoaded", function() {
+    initStatusImage();
+});
 
 //text change
 function toggleButtonText(currentImageIndex) {
@@ -70,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// Icon change
+// Timer Icon change
 function toggleIconImage() {
     var toggleButton = document.getElementById('modeIconButton');
     var timerDisplay = document.getElementById('timerDisplay')
